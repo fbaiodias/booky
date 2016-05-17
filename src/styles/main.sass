@@ -1,0 +1,114 @@
+$blue: #03C3E2
+$red: #F97B66
+$white: #F2F5F7
+$yellow: #FCC04F
+// $darkBlue: #5D6A91
+$darkBlue: rgba(93, 106, 145, 0.3)
+$darkGrey: #21293A
+
+@import bourbon
+
+.app
+  margin: auto
+  width: 500px
+  font-family: HelveticaNeue, sans-serif
+
+.user-name
+  margin-bottom: 10px
+
+.user-name__input
+  border: none
+  outline: none
+  font-size: 30px
+  background-color: rgba(250, 250, 250, 0.7)
+
+.environment
+  padding: 20px
+  background-color: $blue
+  margin-bottom: 20px
+  position: relative
+
+.environment__title
+  font-size: 40px
+  color: $white
+  border-bottom: 3px solid $darkBlue
+  font-weight: bold
+  letter-spacing: 2px
+  text-transform: lowercase
+  letter-spacing: -3px
+  text-shadow: 1px 0 $darkBlue
+
+.environment__book
+  color: $white
+  text-transform: uppercase
+  background-color: $red
+  padding: 10px
+  display: inline-block
+  font-weight: bold
+  cursor: pointer
+  +user-select(none)
+  position: absolute
+  margin-left: 20px
+  top: 0
+  left: 100%
+
+.environment__guest
+  font-size: 30px
+  vertical-align: middle
+  color: white
+
+  &.is-available
+    text-align: center
+
+.environment__label
+  letter-spacing: -2px
+  font-family: Consolas, Courier, monospace
+  color: $white
+  font-size: 20px
+
+.environment-creator
+  width: 100%
+  text-align: center
+  font-size: 30px
+  background-color: $red
+  color: $white
+  padding: 10px 0
+  overflow: hidden
+
+.environment-creator__input
+  width: 100%
+  box-sizing: border-box
+  border: 0
+  outline: none
+  background-color: transparent
+  color: white
+  font-size: 30px
+  text-align: center
+
+  +placeholder()
+    color: rgba(0,0,0,.5)
+
+.environment__queue
+  text-align: right
+
+.environment__queue-label
+  color: white
+  margin-right: 20px
+  font-style: italic
+
+.queue-member
+  background-color: $darkBlue
+  text-transform: uppercase
+  font-weight: bold
+  color: $white
+  border-radius: 50%
+  margin-right: 10px
+  width: 1em
+  line-height: 1em
+  padding: 5px
+  font-size: 20px
+  text-align: center
+  display: inline-block
+
+.u-rounded
+  border-radius: 4px
