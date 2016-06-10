@@ -15,7 +15,7 @@ const QueueMember = React.createClass({
         className='queue-member'
         title={this.props.name}
         onMouseEnter={() => this.setState({isHover: true})}
-        onMouseFalse={() => this.setState({isHover: false})}
+        onMouseOut={() => this.setState({isHover: false})}
         >{text}</div>
     )
   }

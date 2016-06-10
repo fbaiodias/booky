@@ -4,7 +4,7 @@
   "description": "A tool to book qa environments",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server -d -w --colors",
+    "start": "./node_modules/.bin/webpack-dev-server -d -w --colors --port 8090",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

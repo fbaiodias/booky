@@ -1,4 +1,4 @@
-var webpackDevServer = 'webpack-dev-server/client?http://localhost:8080'
+var webpackDevServer = 'webpack-dev-server/client?http://localhost:8090'
 var bourbonPaths = require('bourbon').includePaths
 
 module.exports = {
