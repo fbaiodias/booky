@@ -3,7 +3,7 @@ import QueueMember from 'QueueMember'
 
 class Environment extends Component {
   render () {
-    const {guest, name, queue, onBook} = this.props
+    const {guest, name, queue, onBook, onClear} = this.props
 
     const queueLabel = queue.length === 0
       ? null
@@ -21,6 +21,10 @@ class Environment extends Component {
           className='environment__book u-rounded'
           onClick={() => onBook()}
           >Book</div>
+        <div
+          className='environment__clear u-rounded'
+          onClick={() => onClear()}
+          >Clear</div>
       </div>
     )
   }
