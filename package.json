@@ -4,8 +4,9 @@
   "description": "A tool to book qa environments",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server -d -w --colors --port 8090",
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack --colors",
+    "start": "webpack-dev-server -d -w --colors --port 8090",
+    "build": "NODE_ENV=production webpack --colors",
+    "start:server": "node lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -25,13 +26,21 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "boom": "^3.2.1",
     "bourbon": "^4.2.7",
     "classname": "0.0.0",
     "freezr": "0.0.9",
+    "hapi": "^13.4.1",
+    "hapi-swagger": "^6.1.0",
+    "inert": "^4.0.0",
+    "joi": "^8.4.1",
+    "pg": "^5.0.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "sequelize": "^3.23.3",
+    "vision": "^4.1.0"
   },
   "keywords": [],
   "author": "",
