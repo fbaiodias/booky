@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {deepFreeze} from 'freezr'
+import {freeze,deepFreeze} from 'freezr'
 import Environment from 'Environment'
 import EnvironmentCreator from 'EnvironmentCreator'
 
@@ -9,9 +9,9 @@ class App extends Component {
     this.state = {
       userName: '',
       environments: deepFreeze([
-        {name: 'a', guest: 'foo', queue: []},
-        {name: 'b', guest: '', queue: []},
-        {name: 'c', guest: 'bar', queue: ['tar']}
+        {name: 'testing', guest: 'foo', queue: []},
+        {name: 'stage', guest: '', queue: []},
+        {name: 'preprod', guest: 'bar', queue: ['tar']}
       ])
     }
   }
@@ -36,6 +36,7 @@ class App extends Component {
               {...env}
               isOwner={userName.toLowerCase() === env.guest.toLowerCase()}
               onBook={() => this.book(index)}
+              onClear={() => this.clear(index)}
               />
           )}
           <EnvironmentCreator
@@ -73,8 +74,17 @@ class App extends Component {
         }
       }
     )
-
     this.setState({environments})
+  }
+  clear (environmentIndex) {
+    const environments = this.state.environments.updateIn(
+      [environmentIndex],
+      (environment) =>
+        environment
+          .set('guest', '')
+          .set('queue', freeze([]))
+    )
+    this.setState({environments})  
   }
 }
 App.propTypes = {}
